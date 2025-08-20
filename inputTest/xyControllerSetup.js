@@ -82,7 +82,7 @@ function newXValue(value){
 function newYValue(value){
     // value has a range of 0 - 100
     // can be remapped via the helper function
-    //console.log(`yPos: ${value}`);
+    console.log(`yPos: ${value}`);
     yOutputText.textContent = value;
 }
 

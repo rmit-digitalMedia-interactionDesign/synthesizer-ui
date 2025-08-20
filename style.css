@@ -104,7 +104,7 @@ dialog::backdrop {
   cursor: pointer;
 }
 .whiteKey:active {
-  filter: invert();
+  /* filter: invert(); */
 }
 .blackKeyCont {
   position: absolute;
