@@ -7,8 +7,8 @@
 :root{
 /* Paperback-2 Palette Created by Doph */
 /* https://lospec.com/palette-list/paperback-2 */
-  --col02: #de5925;
-  --col01: #289033;
+  --col02: white;
+  --col01: black;
   --border: solid 12px var(--col01);
 }
 
