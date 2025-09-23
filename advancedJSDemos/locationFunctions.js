@@ -75,7 +75,8 @@ function parseMapInfo(mapFeatures){
 
 /* this operates much the same as the above but calls a different api */
 async function getWeatherData(lat, long){
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current=temperature_2m,weather_code&forecast_days=1`;
+  //const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current=temperature_2m,weather_code&forecast_days=1`;
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,rain,snowfall,snow_depth&current=is_day`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -90,6 +91,10 @@ async function getWeatherData(lat, long){
 }
 
 function parseWeatherInfo(weatherObject){
+  console.log(weatherObject.current.is_day);
+  if(weatherObject.current.is_day === 1){
+    document.body.style.backgroundColor = "red";
+  }
   tempResult.textContent = weatherObject.current.temperature_2m;
 }
 
