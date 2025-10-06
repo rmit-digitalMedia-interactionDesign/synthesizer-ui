@@ -39,8 +39,8 @@ video {
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties */
 
 :root {
-  --col01: rgb(15, 30, 58);
-  --col02: rgb(255, 214, 255);
+  --col01: cornflowerblue;
+  --col02: coral;
   --border: solid 1rem var(--col02);
 }
 
