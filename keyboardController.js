@@ -9,7 +9,7 @@ let allKeys = Array.from(document.getElementsByClassName("whiteKey")).concat(
 );
 
 /* set default octace : we will update based on keys later on */
-let octave = 3;
+//let octave = 3;
 
 let mouseHeld = false;
 
@@ -26,11 +26,13 @@ window.addEventListener("mouseup", () => {
 allKeys.forEach((key) => {
   key.addEventListener("mousedown", (e) => {
     let note = e.target.dataset.note;
+    let octave = e.target.parentElement.parentElement.dataset.octave;
     polySynth.triggerAttack(note + octave);
     key.style.backgroundColor = "red";
   });
   key.addEventListener("mouseup", (e) => {
     let note = e.target.dataset.note;
+    let octave = e.target.parentElement.parentElement.dataset.octave;
     polySynth.triggerRelease(note + octave);
     key.style.backgroundColor = "var(--col02)";
   });
@@ -39,11 +41,13 @@ allKeys.forEach((key) => {
       return;
     }
     let note = e.target.dataset.note;
+    let octave = e.target.parentElement.parentElement.dataset.octave;
     polySynth.triggerAttack(note + octave);
     key.style.backgroundColor = "red";
   });
   key.addEventListener("mouseleave", (e) => {
     let note = e.target.dataset.note;
+    let octave = e.target.parentElement.parentElement.dataset.octave;
     polySynth.triggerRelease(note + octave);
     key.style.backgroundColor = "var(--col02)";
   });

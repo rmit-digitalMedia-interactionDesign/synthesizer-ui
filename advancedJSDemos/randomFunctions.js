@@ -284,3 +284,6 @@ vec3 hash33( uvec3 x )
     return vec3(x)*(1.0/float(0xffffffffU));
 }
 */
+
+console.log(color);
+document.body.style.backgroundColor = color;

@@ -43,6 +43,9 @@ const reverb = new Tone.Reverb(2);
 const meter = new Tone.Meter();
 meter.smoothing = 0.1;
 
+const EQ = new Tone.EQ3(-12, 1, 1);
+//EQ.set ({low : 0});
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////// Functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,7 +54,7 @@ meter.smoothing = 0.1;
 // This gets triggered when the user closes the dialog element
 // It will connect the polysynth => filter => distortion => meter => audio output
 function toneInit() {
-  polySynth.chain(filter, distortion, reverb, meter, Tone.Destination);
+  polySynth.chain(EQ, filter, distortion, reverb, meter, Tone.Destination);
   // This is an alternative statement if the sampler is instead chosen : the only difference is the variable name
   // The sampler above must be uncommented for this to work, as well as the declaration on line 3 of keyboardController.js
   // sampler.chain(filter, distortion, meter, Tone.Destination);
